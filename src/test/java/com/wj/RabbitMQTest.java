@@ -1,5 +1,6 @@
 package com.wj;
 
+import com.wj.service.Sender;
 import com.wj.service.SenderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,9 +23,14 @@ public class RabbitMQTest {
     @Autowired
     private SenderService senderService;
 
+
+    @Autowired
+    private Sender sender;
+
     @Test
     public void test() {
         //senderService.send("test", "123");
-        senderService.send("exchange-test", "bind.test", "123");
+        //senderService.send("exchange-test", "bind.test", "123");
+        sender.send("exchange-test", "bind.test", "123");
     }
 }

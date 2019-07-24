@@ -15,6 +15,7 @@ spring:
       password: admin
       publisher-confirms: true
       virtual-host: /
+      publisher-returns: true
 
 
 
