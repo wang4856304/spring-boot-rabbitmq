@@ -1,5 +1,6 @@
 package com.wj.service;
 
+import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.Message;
 
 /**
@@ -11,4 +12,5 @@ import org.springframework.amqp.core.Message;
  */
 public interface ConsumerService {
     void consumer(Message message);
+    void manualConsumer(Message message, Channel channel) throws Exception;
 }
