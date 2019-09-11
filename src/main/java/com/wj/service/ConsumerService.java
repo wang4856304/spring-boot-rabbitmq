@@ -1,5 +1,7 @@
 package com.wj.service;
 
+import org.springframework.amqp.core.Message;
+
 /**
  * @author jun.wang
  * @title: ConsumerService
@@ -8,5 +10,5 @@ package com.wj.service;
  * @date 2019/5/30 16:19
  */
 public interface ConsumerService {
-    void consumer(String message);
+    void consumer(Message message);
 }

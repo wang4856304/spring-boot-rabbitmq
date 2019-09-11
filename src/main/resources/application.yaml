@@ -16,6 +16,9 @@ spring:
       publisher-confirms: true
       virtual-host: /
       publisher-returns: true
+#      listener:
+#         simple:
+#            acknowledge-mode: manual  #消费端手动应答
 
 
 
