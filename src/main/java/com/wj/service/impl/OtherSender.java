@@ -32,7 +32,7 @@ public class OtherSender implements RabbitTemplate.ConfirmCallback {
     @Override
     public void confirm(CorrelationData correlationData, boolean b, String s) {
         if (b) {
-            System.out.println(correlationData.getId());
+            System.out.println("消息发送成功:" + correlationData.getId());
         }
         else {
             System.out.println(s);

@@ -40,11 +40,11 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     @RabbitHandler
-    public void manualConsumer(Message message, Channel channel) throws Exception {
+    public void manualConsumer(String str, Message message, Channel channel) throws Exception {
+
         long deliveryTag = message.getMessageProperties().getDeliveryTag();
-        channel.basicAck(deliveryTag, true);//发送端必须设置回调
+        channel.basicAck(deliveryTag, false);//手工ack,发送端必须设置回调,false只确认当前一个消息收到，true确认所有consumer获得的消息
         String msg = new String(message.getBody());
-        int i = Integer.valueOf(msg);
         System.out.println(msg);
     }
 
