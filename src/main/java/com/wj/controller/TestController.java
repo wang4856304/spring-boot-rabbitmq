@@ -28,7 +28,7 @@ public class TestController {
     @RequestMapping("/test/confirm")
     public Object testConfirm() {
         //sender.send("exchange-test", "bind.test", "123");
-        otherSender.send("exchange-test", "bind.test", "123");
+        otherSender.send("exchange-test", "xxxx", "123");
         return "success";
     }
 }
